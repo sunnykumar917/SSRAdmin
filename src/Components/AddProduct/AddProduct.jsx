@@ -40,7 +40,7 @@ const AddProduct = () => {
             formData.append('product', image);
     
             // Send POST request to upload image
-            const response = await fetch('http://localhost:5001/upload', {
+            const response = await fetch('https://ssrstylesbackend.onrender.com/upload', {
                 method: 'POST',
                 body: formData,
             });
@@ -59,7 +59,7 @@ const AddProduct = () => {
                 const updatedProductDetails = { ...productDetails, image: responseData.img_url };
                 
                 // Send updated product details to the server
-                const addProductResponse = await fetch('http://localhost:5001/addproduct', {
+                const addProductResponse = await fetch('https://ssrstylesbackend.onrender.com/addproduct', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
